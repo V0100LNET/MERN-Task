@@ -1,0 +1,10 @@
+img{
+    width: 600px;
+}
+
+mark{
+    background: white;
+    text-transform: uppercase;
+    color: crimson;
+    border-radius: 5px;
+}

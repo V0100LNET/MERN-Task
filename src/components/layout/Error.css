@@ -1,0 +1,17 @@
+.error404{
+    font-size: 10rem;
+    position: absolute;
+    left: 60%;
+    top:40%;
+    color: white;
+  }
+  
+  .content-404{
+    height: 100vh;
+    width: 100vw;
+    background-image: url("./error404.svg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+  }
