@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import ProyectoState from './context/proyectos/proyectoState';
 import NuevaCuenta from "./components/authentication/NuevaCuenta";
+import ProyectoState from './context/proyectos/proyectoState';
 import Proyectos from "./components/proyectos/Proyectos";
 import Login from "./components/authentication/Login";
+import TareaState from './context/tareas/tareaState';
 import Error404 from './components/layout/Error404';
 import Home from './components/layout/Home';
 import React from 'react';
@@ -15,15 +16,17 @@ function App() {
   return (
     <div>
       <ProyectoState>
-        <Router>
-          <Switch>
-              <Route exact path="/" component={Home}/>
-              <Route exact path="/login" component={Login}/>
-              <Route exact path="/nueva-cuenta" component={NuevaCuenta}/>
-              <Route exact path="/proyectos" component={Proyectos}/>
-              <Route exact path="/error404" component={Error404}/>
-          </Switch>
-        </Router>
+        <TareaState>
+          <Router>
+            <Switch>
+                <Route exact path="/" component={Home}/>
+                <Route exact path="/login" component={Login}/>
+                <Route exact path="/nueva-cuenta" component={NuevaCuenta}/>
+                <Route exact path="/proyectos" component={Proyectos}/>
+                <Route exact path="/error404" component={Error404}/>
+            </Switch>
+          </Router>
+        </TareaState>
       </ProyectoState>
     </div>
   );
