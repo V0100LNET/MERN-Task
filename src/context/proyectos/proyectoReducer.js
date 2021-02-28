@@ -14,8 +14,6 @@ import {
     PROYECTO_ACTUAL,
     ELIMINAR_PROYECTO,
 } from "../../types";
-import proyectoContext from "./proyectoContext";
-
 
 
 
