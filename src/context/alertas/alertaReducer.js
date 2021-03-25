@@ -1,7 +1,7 @@
 import { MOSTRAR_ALERTA, OCULTAR_ALERTA } from "../../types";
 
 
-export default (state, action) => {
+const fn = (state, action) => {
     switch (action.type) {
         case MOSTRAR_ALERTA: 
             return{
@@ -16,3 +16,5 @@ export default (state, action) => {
             return state;
     }
 }
+
+export default fn;

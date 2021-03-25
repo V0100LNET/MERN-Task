@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NuevaCuenta from "./components/authentication/NuevaCuenta";
 import ProyectoState from './context/proyectos/proyectoState';
 import AuthState from './context/autenticacion/authState';
+import RutaPrivada from './components/rutas/RutaPrivada';
 import Proyectos from "./components/proyectos/Proyectos";
 import AlertaState from './context/alertas/alertaState';
 import Login from "./components/authentication/Login";
@@ -10,10 +11,16 @@ import Error404 from './components/layout/Error404';
 import Home from './components/layout/Home';
 import React from 'react';
 import "./index.css"
+import tokenAuth from './config/token';
 
+
+//Revisar si tenemos un token
+const token_1 = localStorage.getItem('token_1');
+if(token_1){
+  tokenAuth(token_1);
+}
 
 function App() {
-  console.log(process.env.REACT_APP_BACKEND_URL);
   //lo que esta dentro del swtich es cada una de las diferemtes paginas
   // lo que esta fuera del switch es lo que se vera en todas las paginasa
   return (
@@ -27,7 +34,7 @@ function App() {
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/login" component={Login}/>
                     <Route exact path="/nueva-cuenta" component={NuevaCuenta}/>
-                    <Route exact path="/proyectos" component={Proyectos}/>
+                    <RutaPrivada exact path="/proyectos" component={Proyectos}/>
                     <Route exact path="/error404" component={Error404}/>
                 </Switch>
               </Router>

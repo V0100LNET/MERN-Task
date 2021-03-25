@@ -1,8 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AlertaContext from '../../context/alertas/alertaContext';
+import AuthContext from '../../context/autenticacion/authContext';
 
-const NuevaCuenta  = () => {
+const NuevaCuenta  = (props) => {
+    //le pasamos props porque como estamos usando react router dom tenemos acceso al props.history
     //para el state qeu se pasa a difernetesc componentes estaremos usando 
     //useContext y useReducer
 
@@ -10,6 +12,22 @@ const NuevaCuenta  = () => {
     const alertaContext = useContext(AlertaContext);
     const { alerta, mostrarAlerta } = alertaContext;
 
+    //context extrayendo registro de usuarios
+    const authContext = useContext(AuthContext);
+    const { mensaje, autenticado, registrarUsuario } = authContext;
+
+    //en caso de que el usuariose haya autenticado o registrado o sea un registro duplicado
+    useEffect(() => {
+        if(autenticado){
+            props.history.push('/proyectos');
+        }
+
+        if(mensaje){
+            mostrarAlerta(mensaje.msg, mensaje.categoria);
+        }
+        //eslint-disable-next-line
+    },[mensaje, autenticado, props.history])
+    
     //state para inicar sesion
     const [usuario, guardarUsuario] = useState({
         nombre: '',
@@ -51,7 +69,11 @@ const NuevaCuenta  = () => {
         }
 
         //pasarlos al action
-        
+        registrarUsuario({
+            nombre, 
+            email, 
+            password
+        });
     };
 
     return(

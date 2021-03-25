@@ -88,6 +88,10 @@ a {
   background-color: transparent;
 }
 
+.close-sesion{
+  color: white;
+}
+
 @media (min-width: 768px) {
   .contenedor-app {
       display: flex;
@@ -140,6 +144,7 @@ aside  {
   padding: 4rem;
 }
 .nombre-usuario {
+  text-transform: capitalize;
   color: var(--blanco);
   font-size: 2.2rem;
   margin: 0;
