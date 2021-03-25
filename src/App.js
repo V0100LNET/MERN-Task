@@ -9,9 +9,9 @@ import Login from "./components/authentication/Login";
 import TareaState from './context/tareas/tareaState';
 import Error404 from './components/layout/Error404';
 import Home from './components/layout/Home';
+import tokenAuth from './config/token';
 import React from 'react';
 import "./index.css"
-import tokenAuth from './config/token';
 
 
 //Revisar si tenemos un token
