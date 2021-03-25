@@ -74,7 +74,7 @@ const Home = () => {
                     <H1Title>Mern</H1Title>
                 </div>
                 <div className="menu-nav">
-                    <NavEnlace href={"/error404"}>Gallería</NavEnlace>
+                    <NavEnlace href={"/error404"}>test</NavEnlace>
                     <NavEnlace href={"/error404"}>Reseñas</NavEnlace>
                     <NavEnlace href={"/error404"}>A cerca de</NavEnlace>
                     <NavEnlace href={"/login"}>Iniciar Sesión</NavEnlace>
