@@ -23,7 +23,7 @@ const FormTarea = () => {
 
     } = tareasContext;
 
-    effect que detecta si hay una tarea seleccionada
+    //effect que detecta si hay una tarea seleccionada
     useEffect(() => {
         if(tareaSeleccionada !== null){
             guardarTarea(tareaSeleccionada);
