@@ -23,17 +23,17 @@ const FormTarea = () => {
 
     } = tareasContext;
 
-    //effect que detecta si hay una tarea seleccionada
-    // useEffect(() => {
-    //     if(tareaSeleccionada !== null){
-    //         guardarTarea(tareaSeleccionada);
-    //     }
-    //     else{
-    //         guardarTarea({
-    //             nombre: ''
-    //         })
-    //     }
-    // }, [tareaSeleccionada])
+    effect que detecta si hay una tarea seleccionada
+    useEffect(() => {
+        if(tareaSeleccionada !== null){
+            guardarTarea(tareaSeleccionada);
+        }
+        else{
+            guardarTarea({
+                nombre: ''
+            })
+        }
+    }, [tareaSeleccionada])
 
     //state del formulario
     const [tarea, guardarTarea] = useState({
