@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
-import { useEffect } from 'react/cjs/react.development';
+// import { useEffect } from 'react/cjs/react.development';
+
 import proyectoContext from '../../context/proyectos/proyectoContext';
 import tareaContext from '../../context/tareas/tareaContext';
 
@@ -22,7 +23,6 @@ const FormTarea = () => {
         limpiarTarea
 
     } = tareasContext;
-
     //effect que detecta si hay una tarea seleccionada
     useEffect(() => {
         if(tareaSeleccionada !== null){
